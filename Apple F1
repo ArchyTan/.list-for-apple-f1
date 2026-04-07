@@ -1,0 +1,24 @@
+# NAME: AppleF1
+# AUTHOR: Tan
+# REPO: 
+# UPDATED: 2026-04-07 
+# DOMAIN: 5
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 2
+# TOTAL: 7
+
+# 直播频道授权与准入
+DOMAIN,linear.tv.apple.com
+# --- [只代理钥匙，不代理货物] ---
+# 负责点播授权（检票口），必须走美国，流量极小
+DOMAIN,play-edge.itunes.apple.com
+# 负责版权证书（解密），必须走美国，流量极小
+DOMAIN,cma2.itunes.apple.com
+# 负责同步进度，必须走美国
+DOMAIN,upp.itunes.apple.com
+# 体育元数据服务
+DOMAIN,tv.g.apple.com
+# F1 账号登录、订阅校验
+DOMAIN-SUFFIX,formula1.com
+# 实时计时数据与 API
+DOMAIN-SUFFIX,f1-api.com
