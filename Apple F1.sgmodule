@@ -1,0 +1,27 @@
+#!name=Apple F1 优化规则 (带独立策略组)
+#!desc=安装后会在控制面板新增一个 [AppleF1] 策略组。你可以自由选择该策略组绑定的节点。
+#!author=Tan
+#!system=ios, mac
+
+[Proxy Group]
+# 创建一个名为 AppleF1 的策略组，默认会引入你配置里所有的节点（或者你可以把 `include-all-proxies=true` 删掉，手动去 Surge 里面勾选）
+AppleF1 = select, policy-path=https://sub.store, include-all-proxies=true, DIRECT
+
+[Rule]
+# --- 直播频道授权与准入 (直连) ---
+DOMAIN,linear.tv.apple.com,DIRECT
+
+# --- 体育元数据服务 (直连) ---
+DOMAIN,tv.g.apple.com,DIRECT
+
+# --- 钥匙/鉴权/API (统一走上面创建的 AppleF1 策略组) ---
+# 负责点播授权（检票口）
+DOMAIN,play-edge.itunes.apple.com,AppleF1
+# 负责版权证书（解密）
+DOMAIN,cma2.itunes.apple.com,AppleF1
+# 负责同步进度
+DOMAIN,upp.itunes.apple.com,AppleF1
+
+# --- F1 账号登录与 API ---
+DOMAIN-SUFFIX,formula1.com,AppleF1
+DOMAIN-SUFFIX,f1-api.com,AppleF1
