@@ -1,28 +1,15 @@
-#!name=Apple F1 优化规则 (标准独立策略组版)
-#!desc=安装后会在控制面板新增一个 [AppleF1] 策略组。请在主配置中将其绑定到需要的节点。
+#!name=Apple F1 优化规则 (参数映射版)
+#!desc=将所有 F1 流量映射到主配置的策略组。导入后请在模块设置中将目标指定为你的 Google 策略组。
 #!author=Tan
 #!system=ios, mac
-
-[Proxy Group]
-# 声明一个标准的 select 策略组，默认包含直连。
-# 提示：安装模块后，你可以在 Surge 的策略组管理中，将你现有的美国策略组或具体节点勾选进来。
-AppleF1 = select, DIRECT
+#!argument=[TargetGroup:目标策略组]
 
 [Rule]
-# --- 直播频道授权与准入 (直连) ---
-DOMAIN,linear.tv.apple.com,DIRECT
-
-# --- 体育元数据服务 (直连) ---
-DOMAIN,tv.g.apple.com,DIRECT
-
-# --- 钥匙/鉴权/API (统一走上面创建的 AppleF1 策略组) ---
-# 负责点播授权（检票口）
-DOMAIN,play-edge.itunes.apple.com,AppleF1
-# 负责版权证书（解密）
-DOMAIN,cma2.itunes.apple.com,AppleF1
-# 负责同步进度
-DOMAIN,upp.itunes.apple.com,AppleF1
-
-# --- F1 账号登录与 API ---
-DOMAIN-SUFFIX,formula1.com,AppleF1
-DOMAIN-SUFFIX,f1-api.com,AppleF1
+# --- 所有 7 个地址全部走参数指定的策略组 ---
+DOMAIN,linear.tv.apple.com,{{目标策略组}}
+DOMAIN,play-edge.itunes.apple.com,{{目标策略组}}
+DOMAIN,cma2.itunes.apple.com,{{目标策略组}}
+DOMAIN,upp.itunes.apple.com,{{目标策略组}}
+DOMAIN,tv.g.apple.com,{{目标策略组}}
+DOMAIN-SUFFIX,formula1.com,{{目标策略组}}
+DOMAIN-SUFFIX,f1-api.com,{{目标策略组}}
