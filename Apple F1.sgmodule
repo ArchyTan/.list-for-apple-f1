@@ -2,6 +2,9 @@
 #!desc=直接将 F1 域名关联至现有的 Google 策略组，不再创建新组。
 
 [Rule]
+
+PROCESS-NAME,com.apple.tv,"Google"
+PROCESS-NAME,MediaRemote,"Google"
 # 直播频道授权与准入
 DOMAIN,linear.tv.apple.com,"Google",force-remote-dns
 # DOMAIN-KEYWORD,play-edge,"Google",force-remote-dns
