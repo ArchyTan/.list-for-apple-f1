@@ -1,13 +1,19 @@
-#!name=Apple F1 Module
-#!desc=All F1 traffic routes to Google group.
-#!author=Tan
-#!system=ios, mac
+#!name=Apple F1 转发
+#!desc=直接将 F1 域名关联至现有的 Google 策略组，不再创建新组。
 
 [Rule]
-DOMAIN,linear.tv.apple.com,Google
-DOMAIN,play-edge.itunes.apple.com,Google
-DOMAIN,cma2.itunes.apple.com,Google
-DOMAIN,upp.itunes.apple.com,Google
-DOMAIN,tv.g.apple.com,Google
-DOMAIN-SUFFIX,formula1.com,Google
-DOMAIN-SUFFIX,f1-api.com,Google
+# 直播频道授权与准入
+DOMAIN,linear.tv.apple.com,"Google"
+# --- [只代理钥匙，不代理货物] ---
+# 负责点播授权（检票口），必须走美国，流量极小
+DOMAIN,play-edge.itunes.apple.com,"Google"
+# 负责版权证书（解密），必须走美国，流量极小
+DOMAIN,cma2.itunes.apple.com,"Google"
+# 负责同步进度，必须走美国
+DOMAIN,upp.itunes.apple.com,"Google"
+# 体育元数据服务
+DOMAIN,tv.g.apple.com,"Google"
+# F1 账号登录、订阅校验
+DOMAIN-SUFFIX,formula1.com,"Google"
+# 实时计时数据与 API
+DOMAIN-SUFFIX,f1-api.com,"Google"
