@@ -4,7 +4,7 @@
 [Rule]
 # 直播频道授权与准入
 DOMAIN,linear.tv.apple.com,"Google"
-# --- [只代理钥匙，不代理货物] ---
+DOMAIN,play-edge.itunes.apple.com,"Google"
 # 负责点播授权（检票口），必须走美国，流量极小
 DOMAIN,play-edge.itunes.apple.com,"Google"
 # 负责版权证书（解密），必须走美国，流量极小
