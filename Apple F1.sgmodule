@@ -1,10 +1,9 @@
-#!name=Apple F1 直连 Google 策略组
-#!desc=将所有 Apple F1 相关的直播、授权、API 地址统一分流至主配置中的 Google 策略组。
+#!name=Apple F1 Module
+#!desc=All F1 traffic routes to Google group.
 #!author=Tan
 #!system=ios, mac
 
 [Rule]
-# --- 所有 7 个地址统一走 Google 策略组 ---
 DOMAIN,linear.tv.apple.com,Google
 DOMAIN,play-edge.itunes.apple.com,Google
 DOMAIN,cma2.itunes.apple.com,Google
