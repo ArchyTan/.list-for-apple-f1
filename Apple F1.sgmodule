@@ -1,11 +1,12 @@
-#!name=Apple F1 优化规则 (带独立策略组)
-#!desc=安装后会在控制面板新增一个 [AppleF1] 策略组。你可以自由选择该策略组绑定的节点。
+#!name=Apple F1 优化规则 (标准独立策略组版)
+#!desc=安装后会在控制面板新增一个 [AppleF1] 策略组。请在主配置中将其绑定到需要的节点。
 #!author=Tan
 #!system=ios, mac
 
 [Proxy Group]
-# 创建一个名为 AppleF1 的策略组，默认会引入你配置里所有的节点（或者你可以把 `include-all-proxies=true` 删掉，手动去 Surge 里面勾选）
-AppleF1 = select, policy-path=https://sub.store, include-all-proxies=true, DIRECT
+# 声明一个标准的 select 策略组，默认包含直连。
+# 提示：安装模块后，你可以在 Surge 的策略组管理中，将你现有的美国策略组或具体节点勾选进来。
+AppleF1 = select, DIRECT
 
 [Rule]
 # --- 直播频道授权与准入 (直连) ---
